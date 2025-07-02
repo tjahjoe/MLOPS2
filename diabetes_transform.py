@@ -17,21 +17,26 @@ NUMERICAL_FEATURES = [
 LABEL_KEY = 'Outcome'
  
 def transformed_name(key):
-    """Renaming transformed features"""
+    """Menambahkan suffix '_xf' pada nama fitur untuk menandai fitur yang sudah ditransformasi.
+
+    Args:
+        key: Nama fitur asli.
+
+    Returns:
+        Nama fitur dengan suffix '_xf'.
+    """
     return key + "_xf"
  
  
 def preprocessing_fn(inputs):
-    """
-    Preprocess input features into transformed features
-    
+    """Fungsi preprocessing untuk mentransformasi fitur input agar siap digunakan model.
+
     Args:
-        inputs: map from feature keys to raw features.
-    
-    Return:
-        outputs: map from feature keys to transformed features.    
+        inputs: Dictionary yang memetakan nama fitur ke tensor fitur mentah.
+
+    Returns:
+        Dictionary yang memetakan nama fitur yang telah ditransformasi ke tensor yang telah ditransformasi.
     """
-    
     outputs = {}
     for feature in NUMERICAL_FEATURES:
         outputs[transformed_name(feature)] = tft.scale_to_0_1(inputs[feature])
