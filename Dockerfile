@@ -1,7 +1,7 @@
 FROM tensorflow/serving:latest
  
 COPY ./serving_model/diabetes-pipeline /models/cc-model
-COPY ./config /model_config
+COPY ./monitoring /model_config
 ENV MODEL_NAME=cc-model
  
 ENV MONITORING_CONFIG="/model_config/prometheus.config"
