@@ -13,5 +13,5 @@
 | **Metrik evaluasi**      | `BinaryAccuracy` (threshold > 0.5), `AUC`, `Precision`, `Recall` dan `ExampleCount`.  |
 | **Performa model**       | Model mencapai **AUC: 0.814** dengan jumlah data evaluasi 182 dan akurasi stabil pada evaluasi menggunakan TFMA. |
 | **Opsi deployment**      | Model dideploy menggunakan **TensorFlow Serving** pada Railway untuk serving REST API prediksi diabetes. |
-| **Web app**              | [Diabetes Detection API](https://mlops2-production-fce5.up.railway.app/) untuk prediksi dengan JSON payload. |
+| **Web app**              | [Diabetes Detection API](https://mlops2-production-fce5.up.railway.app/v1/models/cc-model/metadata) untuk prediksi dengan JSON payload. |
 | **Monitoring**           | Monitoring model serving dilakukan menggunakan **Prometheus** dengan exporter di container TensorFlow Serving untuk memantau latency, throughput dan health endpoint. |
