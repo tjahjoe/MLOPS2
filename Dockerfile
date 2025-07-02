@@ -1,6 +1,6 @@
 FROM tensorflow/serving:latest
  
-COPY ./serving_model /models/cc-model
+COPY ./serving_model/diabetes-pipeline /models/cc-model
 COPY ./config /model_config
 ENV MODEL_NAME=cc-model
  
