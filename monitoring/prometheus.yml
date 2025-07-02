@@ -11,4 +11,4 @@ scrape_configs:
     metrics_path: /monitoring/prometheus/metrics 
     scheme: https
     static_configs:
-      - targets: ['mlops-production-5a99.up.railway.app'] 
+      - targets: ['mlops2-production-fce5.up.railway.app'] 
